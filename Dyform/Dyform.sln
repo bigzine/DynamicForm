@@ -5,9 +5,12 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyform", "Dyform\Dyform.csproj", "{13176F14-C730-4BC7-BF0B-1876F4E7B7CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B2A24C75-F93E-46FB-8018-4B485C759530}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DyformTest", "DyformTest\DyformTest.csproj", "{18636B76-1B3D-426A-A229-09F71EBF618F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DyformTest", "DyformTest\DyformTest.csproj", "{EE8FCB5D-965E-4193-B9F2-A379ADF40879}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{84AAEB14-E643-4AC1-95ED-623D77BA1F05}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,15 +22,12 @@ Global
 		{13176F14-C730-4BC7-BF0B-1876F4E7B7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13176F14-C730-4BC7-BF0B-1876F4E7B7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13176F14-C730-4BC7-BF0B-1876F4E7B7CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE8FCB5D-965E-4193-B9F2-A379ADF40879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE8FCB5D-965E-4193-B9F2-A379ADF40879}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE8FCB5D-965E-4193-B9F2-A379ADF40879}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE8FCB5D-965E-4193-B9F2-A379ADF40879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18636B76-1B3D-426A-A229-09F71EBF618F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18636B76-1B3D-426A-A229-09F71EBF618F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18636B76-1B3D-426A-A229-09F71EBF618F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18636B76-1B3D-426A-A229-09F71EBF618F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{EE8FCB5D-965E-4193-B9F2-A379ADF40879} = {B2A24C75-F93E-46FB-8018-4B485C759530}
 	EndGlobalSection
 EndGlobal
