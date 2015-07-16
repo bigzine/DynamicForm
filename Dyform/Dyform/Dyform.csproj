@@ -53,9 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ACompositeQuestion.cs" />
-    <Compile Include="CompositeQuestions.cs" />
     <Compile Include="QuestionBase.cs" />
+    <Compile Include="CompositeQuestion.cs" />
+    <Compile Include="QuestionRoot.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
