@@ -17,7 +17,6 @@ namespace Dyform
       public override QuestionBase AddNewQuestions(string name)
       {
           var composite = new CompositeQuestion();
-          composite.Index = _counter;
           composite.Parent = this;
           SubQuestions.Add(composite);
           _counter++;

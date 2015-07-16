@@ -10,24 +10,33 @@ namespace Dyform
 
    {
         public string Title { get; set; }
-        public QuestionBase Parent;
+        private QuestionBase _parent;
+        public QuestionBase Parent
+        {
+            get { return _parent; }
+            set
+            {
+                if (value == null)
+                {
+                    Parent.SubQuestions.Remove(this);
+                }
+                _parent = value;
+            }
+        }
 
         public int Index
         {
-            get { return _index; }
+            get { return Parent.SubQuestions.IndexOf(this); }
             set
             {
-                _index = value;
                 if (Parent!=null)
-                SwitchIndex(value);
+                    SwitchIndex(value);
             }
         }
 
         private void SwitchIndex(int value)
         {
-            var i = value;
-          
-            Parent.SubQuestions.RemoveAt(_index);
+            Parent.SubQuestions.Remove(this);
             Parent.SubQuestions.Insert(value, this);
 
         }
@@ -38,15 +47,23 @@ namespace Dyform
         }
         
         public IList<QuestionBase> SubQuestions { get; set; }
-        private int _index;
 
-       public abstract QuestionBase AddNewQuestions(string name);
+        public abstract QuestionBase AddNewQuestions(string name);
 
         public abstract QuestionBase AddNewQuestions(Type composite);
 
         public bool Countains(QuestionBase q1)
         {
-            throw new NotImplementedException();
+            QuestionBase questionParent = q1.Parent;
+            while (questionParent != null)
+            {
+                if (questionParent.Equals(this))
+                {
+                    return true;
+                }
+                questionParent = questionParent.Parent;
+            }
+            return false;
         }
 
    }
