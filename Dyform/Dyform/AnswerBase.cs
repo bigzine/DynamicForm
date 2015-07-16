@@ -14,5 +14,10 @@ namespace Dyform
         {
             question = q;
         }
+
+        public AnswerBase()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }

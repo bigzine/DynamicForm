@@ -15,13 +15,9 @@ namespace Dyform
           SubQuestions = new List<QuestionBase>();
       }
 
-      public override QuestionBase AddNewQuestions(string name)
-      {
-          SubQuestions.Add(new CompositeQuestion());
-          return new CompositeQuestion();
-      }
+   
 
-      public override QuestionBase AddNewQuestions(Type composite)
+      public override QuestionBase AddNewQuestion(Type composite)
       {
           throw new NotImplementedException();
       }

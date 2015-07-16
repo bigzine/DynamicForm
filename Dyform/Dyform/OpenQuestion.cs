@@ -8,13 +8,12 @@ namespace Dyform
 {
     public class OpenQuestion:QuestionBase
     {
-        public QuestionBase _parent;
-        public Form _form
+        string labelQuestion;
+        QuestionBase _parent;
+
+        public override QuestionBase AddNewQuestion(Type composite)
         {
-            get
-            {
-                return _parent._form;
-            }
+            throw new NotImplementedException();
         }
     }
 }

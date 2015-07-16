@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace Dyform
 {
-    class BooleanQuestion : QuestionBase
+    public class BooleanQuestion : QuestionBase
     {
         string questionLabel;
 
 
+     
+     
+
+        public override QuestionBase AddNewQuestion(Type composite)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

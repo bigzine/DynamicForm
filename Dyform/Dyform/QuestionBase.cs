@@ -37,8 +37,8 @@ namespace Dyform
 
         public Form _form 
         {
-            virtual get { return _parent._form; }
-            private set;
+             get { return _parent._form; }
+
         }
 
         private void SwitchIndex(int value)
