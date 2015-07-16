@@ -11,6 +11,7 @@ namespace Dyform
    {
         public string Title { get; set; }
         private QuestionBase _parent;
+        public bool AllowEmptyAnswer;
         public QuestionBase Parent
         {
             get { return _parent; }
@@ -34,6 +35,12 @@ namespace Dyform
             }
         }
 
+        public Form _form 
+        {
+            virtual get { return _parent._form; }
+            private set;
+        }
+
         private void SwitchIndex(int value)
         {
             Parent.SubQuestions.Remove(this);
@@ -48,9 +55,7 @@ namespace Dyform
         
         public IList<QuestionBase> SubQuestions { get; set; }
 
-        public abstract QuestionBase AddNewQuestions(string name);
-
-        public abstract QuestionBase AddNewQuestions(Type composite);
+        public abstract QuestionBase AddNewQuestion(Type composite);
 
         public bool Countains(QuestionBase q1)
         {

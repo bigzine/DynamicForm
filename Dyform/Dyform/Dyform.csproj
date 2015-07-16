@@ -53,6 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AnswerBase.cs" />
+    <Compile Include="BooleanQuestion.cs" />
+    <Compile Include="ChoicesQuestion.cs" />
+    <Compile Include="OpenAnswer.cs" />
+    <Compile Include="OpenQuestion.cs" />
+    <Compile Include="OrderQuestion.cs" />
     <Compile Include="QuestionBase.cs" />
     <Compile Include="CompositeQuestion.cs" />
     <Compile Include="QuestionRoot.cs" />

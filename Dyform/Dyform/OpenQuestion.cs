@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Dyform
 {
-    class OpenQuestion
+    public class OpenQuestion:QuestionBase
     {
-        string labelQuestion;
-        QuestionBase _parent;
-        Form _form
+        public QuestionBase _parent;
+        public Form _form
         {
             get
             {
