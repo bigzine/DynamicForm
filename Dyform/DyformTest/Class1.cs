@@ -28,8 +28,8 @@ namespace DyformTest
             FormAnswer c = f.FindOrCreateAnswer("John", "Doe");
             Assert.AreNotSame(a, c);
 
-            Assert.AreEqual("Emilie", a.uniqueName);
-            Assert.AreEqual("John", c.uniqueName);
+            Assert.AreEqual("Emilie/Lol", a.uniqueName);
+            Assert.AreEqual("John/Doe", c.uniqueName);
 
         }
     }

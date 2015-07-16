@@ -13,19 +13,20 @@ namespace Dyform
 
         public Form()
         {
-
+            Answers = new Dictionary<string, FormAnswer>();
         }
 
         public FormAnswer FindOrCreateAnswer(string fName, string name)
         {
             var newKey = fName + "/" + name;
-            if( Answers[newKey] == null){
+
+            if ( !Answers.ContainsKey(newKey) )
+            {
+                Answers[newKey] = new FormAnswer(newKey);
                 AnswerCount++;
-                return new FormAnswer(newKey);
             }
-            else{
-                return Answers[newKey];
-            }
+            
+            return Answers[newKey];
         }
 
     }
