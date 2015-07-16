@@ -7,17 +7,32 @@ namespace Dyform
 {
   public   class QuestionRoot:QuestionBase
     {
-      public int Index { get; set; }
       private Form _form;
+      public string Label { get; set; }
+      private QuestionRoot _subQuestions;
+      private int _counter;
 
+
+      
       public override QuestionBase AddNewQuestions(string name)
       {
-          throw new NotImplementedException();
+          var composite = new CompositeQuestion();
+          composite.Index = _counter;
+          composite.Parent = this;
+          SubQuestions.Add(composite);
+          _counter++;
+          return composite;
       }
 
       public override QuestionBase AddNewQuestions(Type composite)
       {
-          throw new NotImplementedException();
+          var composit = new CompositeQuestion();
+          composit.Index = _counter;
+          composit.Parent = this;
+          SubQuestions.Add(composit);
+          _counter++;
+
+          return composit;
       }
 
 

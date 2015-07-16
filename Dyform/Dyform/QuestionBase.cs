@@ -11,8 +11,34 @@ namespace Dyform
    {
         public string Title { get; set; }
         public QuestionBase Parent;
-        public int Index;
 
+        public int Index
+        {
+            get { return _index; }
+            set
+            {
+                _index = value;
+                if (Parent!=null)
+                SwitchIndex(value);
+            }
+        }
+
+        private void SwitchIndex(int value)
+        {
+            var i = value;
+          
+            Parent.SubQuestions.RemoveAt(_index);
+            Parent.SubQuestions.Insert(value, this);
+
+        }
+
+        public QuestionBase()
+        {
+            SubQuestions=new List<QuestionBase>();
+        }
+        
+        public IList<QuestionBase> SubQuestions { get; set; }
+        private int _index;
 
        public abstract QuestionBase AddNewQuestions(string name);
 
@@ -22,5 +48,6 @@ namespace Dyform
         {
             throw new NotImplementedException();
         }
+
    }
 }
