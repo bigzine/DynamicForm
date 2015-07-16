@@ -10,12 +10,12 @@ namespace Dyform
       public int Index { get; set; }
       public QuestionBase Parent { get; set; }
 
-      public override QuestionBase AddNewQuestions(string name, bool typeQuestion)
+      public override QuestionBase AddNewQuestion(string name)
       {
           throw new NotImplementedException();
       }
 
-      public override QuestionBase AddNewQuestions(Type composite, bool typeQuestion)
+      public override QuestionBase AddNewQuestion(Type composite)
       {
           throw new NotImplementedException();
       }
