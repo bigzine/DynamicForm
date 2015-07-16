@@ -10,6 +10,11 @@ namespace Dyform
   {
       public IList<ACompositeQuestion> SubQuestions { get; set; }
 
+      public CompositeQuestions()
+      {
+          SubQuestions=new List<ACompositeQuestion>();
+      }
+
       public override QuestionBase AddNewQuestions(string name, bool typeQuestion)
       {
           throw new NotImplementedException();
@@ -24,5 +29,7 @@ namespace Dyform
       {
           return false;
       }
-    }
+
+     
+  }
 }

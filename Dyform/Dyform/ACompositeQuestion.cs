@@ -8,7 +8,10 @@ namespace Dyform
 {
     public abstract  class ACompositeQuestion
    {
-        public string Title;
+        public string Title { get; set; }
+
+
+
        public abstract QuestionBase AddNewQuestions(string name, bool typeQuestion);
 
         public abstract QuestionBase AddNewQuestions(Type composite, bool typeQuestion);

@@ -16,6 +16,7 @@ namespace Dyform
         public Form()
         {
             Answers = new Dictionary<string, FormAnswer>();
+            Questions=new CompositeQuestions();
         }
 
         public FormAnswer FindOrCreateAnswer(string fName, string name)
