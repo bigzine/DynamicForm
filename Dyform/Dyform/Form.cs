@@ -9,6 +9,8 @@ namespace Dyform
     {
         public string Title { get; set; }
         public int AnswerCount { get; private set; }
+        public ACompositeQuestion Questions { get; set; }
+
         Dictionary<string, FormAnswer> Answers; 
 
         public Form()
