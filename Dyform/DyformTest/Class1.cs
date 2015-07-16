@@ -39,7 +39,7 @@ namespace DyformTest
             Form f=new Form();
             f.Questions.Title = "HG67-Bis";
             Assert.AreEqual("HG67-Bis",f.Title);
-            QuestionBase q1 = f.Questions.AddNewQuestions("DForm.CompositeQuestion,DForm");
+            QuestionBase q1 = f.Questions.AddNewQuestions(typeof(CompositeQuestion));
             QuestionBase q2 = f.Questions.AddNewQuestions(typeof(CompositeQuestion));
             Assert.AreEqual(0,q1.Index);
             Assert.AreEqual(1, q2.Index);
@@ -55,6 +55,26 @@ namespace DyformTest
 
         }
 
+        [Test]
+        public void LaTotale()
+        {
+            Form f = new Form();
+
+            OpenQuestion qOpen = (OpenQuestion)f.Questions.AddNewQuestion(typeof(OpenQuestion));
+            qOpen.Title = "First question in the world!";
+            qOpen.AllowEmptyAnswer = false;
+
+            FormAnswer a = f.FindOrCreateAnswer("Emilie", "Lol");
+            AnswerBase theAnswerOfEmilieToQOpen = a.FindAnswer(qOpen);
+            if(theAnswerOfEmilieToQOpen == null)
+            {
+                theAnswerOfEmilieToQOpen = a.AddAnswerFor(qOpen);
+            }
+            Assert.IsInstanceOf(typeof(OpenAnswer), theAnswerOfEmilieToQOpen);
+
+            OpenAnswer emilieAnswer = (OpenAnswer)theAnswerOfEmilieToQOpen;
+            emilieAnswer.openLabel = "I'm very happy tobe there";
+        }
     }
 
  
