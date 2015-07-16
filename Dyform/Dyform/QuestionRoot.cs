@@ -29,8 +29,6 @@ namespace Dyform
           composit.Index = _counter;
           composit.Parent = this;
           SubQuestions.Add(composit);
-          _counter++;
-
           return composit;
       }
 
