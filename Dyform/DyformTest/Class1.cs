@@ -39,8 +39,8 @@ namespace DyformTest
             Form f=new Form();
             f.Questions.Title = "HG67-Bis";
             Assert.AreEqual("HG67-Bis",f.Title);
-            QuestionBase q1 = f.Questions.AddNewQuestions("DForm.CompositeQuestion,DForm", true);
-            QuestionBase q2 = f.Questions.AddNewQuestions(typeof(ACompositeQuestion), true);
+            QuestionBase q1 = f.Questions.AddNewQuestions("DForm.CompositeQuestion,DForm");
+            QuestionBase q2 = f.Questions.AddNewQuestions(typeof(CompositeQuestion));
             Assert.AreEqual(0,q1.Index);
             Assert.AreEqual(1, q2.Index);
             q2.Index = 0;

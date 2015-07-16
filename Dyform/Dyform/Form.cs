@@ -7,16 +7,28 @@ namespace Dyform
 {
     public class Form
     {
-        public string Title { get; set; }
-        public int AnswerCount { get; private set; }
-        public CompositeQuestions Questions { get; set; }
+        public string Title
+        {
+            get{
+                if (Questions.Title != null)
+                {
+                   return Questions.Title;
+                }
 
-        Dictionary<string, FormAnswer> Answers; 
+                return _title;
+            }
+            set { _title = value; }}
+
+        public int AnswerCount { get; private set; }
+        public QuestionRoot Questions { get; set; }
+
+        Dictionary<string, FormAnswer> Answers;
+        private string _title;
 
         public Form()
         {
             Answers = new Dictionary<string, FormAnswer>();
-            Questions=new CompositeQuestions();
+            Questions = new QuestionRoot();
         }
 
         public FormAnswer FindOrCreateAnswer(string fName, string name)
