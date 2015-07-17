@@ -8,7 +8,7 @@ namespace Dyform
 {
     public class BooleanQuestion : QuestionBase
     {
-        string questionLabel;
+   public string QuestionLabel="coucou";
 
     }
 }

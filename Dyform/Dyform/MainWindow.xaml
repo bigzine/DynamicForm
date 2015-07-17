@@ -1,8 +1,9 @@
 ﻿<Window x:Class="Dyform.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:local="clr-namespace:Dyform.View"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <local:BooleanViewModel Margin="119,106,99.4,76.8" />
     </Grid>
 </Window>
