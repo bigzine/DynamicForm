@@ -10,7 +10,6 @@ namespace Dyform
         public string Label { get; set; }
      
         public QuestionRoot(Form f)
-           :base()
         {
            Form = f;
         }

@@ -58,7 +58,6 @@ namespace DyformTest
         public void LaTotale()
         {
             Form f = new Form();
-
             OpenQuestion qOpen = (OpenQuestion)f.Questions.AddNewQuestion(typeof(OpenQuestion));
             qOpen.Title = "First question in the world!";
             qOpen.AllowEmptyAnswer = false;
@@ -74,7 +73,27 @@ namespace DyformTest
             OpenAnswer emilieAnswer = (OpenAnswer)theAnswerOfEmilieToQOpen;
             emilieAnswer.openLabel = "I'm very happy tobe there";
         }
+
+
+
+        [Test]
+        public void SuppressionQuestionTest()
+        {
+            var f = new Form();
+            QuestionBaseContainer q1 = f.Questions.AddNewQuestionBaseContainer(typeof(CompositeQuestion));
+            QuestionBaseContainer q2 = f.Questions.AddNewQuestionBaseContainer(typeof(CompositeQuestion));
+            QuestionBaseContainer q3 = f.Questions.AddNewQuestionBaseContainer(typeof(CompositeQuestion));
+           var q4 = q1.AddNewQuestionBaseContainer(typeof(CompositeQuestion));
+          var q5=  q2.AddNewQuestionBaseContainer((typeof (CompositeQuestion)));
+           var q6 = q3.AddNewQuestionBaseContainer((typeof (CompositeQuestion)));
+           var q7= q6.AddNewQuestion((typeof (CompositeQuestion)));
+           q1.RemoveQuestion(q4);
+           q2.RemoveQuestion(q5);
+            f.Questions.RemoveQuestion(q3);
+            Assert.False(q1.Contains(q4));
+            Assert.False(q2.Contains(q5));
+            Assert.False(f.Questions.Contains(q7));
+        }
     }
 
- 
 }

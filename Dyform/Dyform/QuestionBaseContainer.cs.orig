@@ -27,6 +27,7 @@ namespace Dyform
             return null;
         }
 
+<<<<<<< HEAD
         public QuestionBaseContainer AddNewQuestionBaseContainer(Type composite)
         {
             var question = Activator.CreateInstance(composite) as QuestionBaseContainer;
@@ -38,10 +39,8 @@ namespace Dyform
                 return question;
             }
             return null;
-        }
-
-
-        public bool RemoveQuestion (QuestionBase questionRemoved)
+=======
+        public bool RemoveQuestion(QuestionBase questionRemoved)
         {
             if (Contains(questionRemoved))
             {
@@ -49,15 +48,23 @@ namespace Dyform
                 parent.SubQuestions.Remove(questionRemoved);
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+>>>>>>> b592f2572ecf5ae0cdbd3a95e26a49b87da96bfc
         }
 
         public bool Contains(QuestionBase q1)
         {
+<<<<<<< HEAD
+            QuestionBase questionParent = q1.Parent;
+=======
             QuestionBaseContainer questionParent = q1.Parent;
+>>>>>>> b592f2572ecf5ae0cdbd3a95e26a49b87da96bfc
             while (questionParent != null)
             {
-                if (questionParent==this)
+                if (questionParent.Equals(this))
                 {
                     return true;
                 }
