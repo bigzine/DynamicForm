@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -48,9 +47,9 @@ namespace DyformTest
             Assert.AreEqual(1, q1.Index);
             q2.Parent = null;
             Assert.AreEqual(0,q1.Index);
-            q2.Parent = q1;
-            Assert.IsTrue(f.Questions.Countains(q1));
-            Assert.IsTrue(f.Questions.Countains(q2));
+            q2.Parent = (CompositeQuestion)q1;
+            Assert.IsTrue(f.Questions.Contains(q1));
+            Assert.IsTrue(f.Questions.Contains(q2));
                 
 
         }
