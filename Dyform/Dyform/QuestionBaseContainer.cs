@@ -27,9 +27,22 @@ namespace Dyform
             return null;
         }
 
+        public QuestionBaseContainer AddNewQuestionBaseContainer(Type composite)
+        {
+            var question = Activator.CreateInstance(composite) as QuestionBaseContainer;
+            if (question != null)
+            {
+                question.Parent = this;
+
+                SubQuestions.Add(question);
+                return question;
+            }
+            return null;
+        }
+
         public bool Contains(QuestionBase q1)
         {
-            QuestionBase questionParent = (QuestionBaseContainer)q1.Parent;
+            QuestionBase questionParent = q1.Parent;
             while (questionParent != null)
             {
                 if (questionParent.Equals(this))

@@ -8,14 +8,7 @@ namespace Dyform
     public class QuestionRoot:QuestionBaseContainer
     {   
         public string Label { get; set; }
-        public override Form Form
-        {
-            get
-            {
-                return Form;
-            }
-        }
-
+     
         public QuestionRoot(Form f)
            :base()
         {
