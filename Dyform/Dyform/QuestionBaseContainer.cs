@@ -44,9 +44,9 @@ namespace Dyform
         public bool RemoveQuestion (QuestionBase questionRemoved)
         {
             if (Contains(questionRemoved))
-            {
-                QuestionBaseContainer parent = questionRemoved.Parent;
-                parent.SubQuestions.Remove(questionRemoved);
+            {   
+                questionRemoved.Parent = null;
+
                 return true;
             }
             return false;
@@ -57,7 +57,7 @@ namespace Dyform
             QuestionBaseContainer questionParent = q1.Parent;
             while (questionParent != null)
             {
-                if (questionParent==this)
+                if (questionParent.Equals(this))
                 {
                     return true;
                 }
