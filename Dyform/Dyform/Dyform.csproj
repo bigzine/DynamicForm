@@ -61,6 +61,7 @@
     <Compile Include="OrderQuestion.cs" />
     <Compile Include="QuestionBase.cs" />
     <Compile Include="CompositeQuestion.cs" />
+    <Compile Include="QuestionBaseContainer.cs" />
     <Compile Include="QuestionRoot.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

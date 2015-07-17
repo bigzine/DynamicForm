@@ -10,9 +10,9 @@ namespace Dyform
 
    {
         public string Title { get; set; }
-        private QuestionBase _parent;
+        private QuestionBaseContainer _parent;
         public bool AllowEmptyAnswer;
-        public QuestionBase Parent
+        public QuestionBaseContainer Parent
         {
             get { return _parent; }
             set
@@ -35,9 +35,11 @@ namespace Dyform
             }
         }
 
-        public Form _form 
+        private Form _form;
+        public virtual Form Form 
         {
              get { return _parent._form; }
+             protected set { _form = value;  }
 
         }
 
@@ -50,26 +52,10 @@ namespace Dyform
 
         public QuestionBase()
         {
-            SubQuestions=new List<QuestionBase>();
+          
         }
         
-        public IList<QuestionBase> SubQuestions { get; set; }
-
-        public abstract QuestionBase AddNewQuestion(Type composite);
-
-        public bool Countains(QuestionBase q1)
-        {
-            QuestionBase questionParent = q1.Parent;
-            while (questionParent != null)
-            {
-                if (questionParent.Equals(this))
-                {
-                    return true;
-                }
-                questionParent = questionParent.Parent;
-            }
-            return false;
-        }
+      
 
    }
 }

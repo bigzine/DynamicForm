@@ -11,9 +11,5 @@ namespace Dyform
         string labelQuestion;
         QuestionBase _parent;
 
-        public override QuestionBase AddNewQuestion(Type composite)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
