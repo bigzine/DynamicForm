@@ -8,19 +8,18 @@ namespace Dyform
     public class QuestionRoot:QuestionBaseContainer
     {   
         public string Label { get; set; }
-        private int _counter;
-        public override Form _form
+        public override Form Form
         {
             get
             {
-                return _form;
+                return Form;
             }
         }
 
         public QuestionRoot(Form f)
            :base()
         {
-           _form = f;
+           Form = f;
         }
     }
 }

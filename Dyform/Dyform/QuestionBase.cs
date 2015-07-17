@@ -35,7 +35,8 @@ namespace Dyform
             }
         }
 
-        public virtual Form _form 
+        private Form _form;
+        public virtual Form Form 
         {
              get { return _parent._form; }
              protected set { _form = value;  }

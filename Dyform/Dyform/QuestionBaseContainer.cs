@@ -9,9 +9,13 @@ namespace Dyform
     {
         public IList<QuestionBase> SubQuestions { get; set; }
 
+        public QuestionBaseContainer()
+        {
+            SubQuestions = new List<QuestionBase>();
+        }
+
         public QuestionBase AddNewQuestion(Type composite)
         {
-            var composit = new CompositeQuestion();
             var question = Activator.CreateInstance(composite) as QuestionBase;
             if (question != null)
             {
