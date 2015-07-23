@@ -11,10 +11,11 @@ namespace Dyform
         public string openLabel;
         private OpenQuestion qOpen;
 
-        public OpenAnswer(OpenQuestion qOpen) : base()
+        public OpenAnswer(OpenQuestion qOpen, String response) : base()
         {
             // TODO: Complete member initialization
             this.qOpen = qOpen;
+            this.openLabel = response;
         }
     }
 }

@@ -10,29 +10,24 @@ namespace Dyform
         public string uniqueName {get; private set;}
         public Form owner;
 
-        public List<AnswerBase> answers;
+        public Dictionary<QuestionBase, AnswerBase> answers;
 
         internal FormAnswer(string key)
         {
             uniqueName = key;
-            answers = new List<AnswerBase>();
+            answers = new Dictionary<QuestionBase, AnswerBase>();
         }
 
         public AnswerBase FindAnswer(QuestionBase q)
         {
-            foreach(AnswerBase ab in answers)
-            {
-                if (ab.question.Equals(q))
-                {
-                    return ab;
-                }
-            }
-            return null;
+            return answers[q];
         }
 
-        public AnswerBase AddAnswerFor(OpenQuestion qOpen)
+        public AnswerBase AddAnswerFor(OpenQuestion qOpen, string label)
         {
-            OpenAnswer answer = new OpenAnswer(qOpen);
+            OpenAnswer answer = new OpenAnswer(qOpen, label);
+
+            answers.Add(qOpen, answer);
 
             return answer;
         }

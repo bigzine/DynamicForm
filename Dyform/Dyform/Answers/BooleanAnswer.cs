@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyform
+namespace Dyform.Answers
 {
-  public   class CompositeQuestion :QuestionBaseContainer
-  {
-
-     
-  }
+    class BooleanAnswer:AnswerBase
+    {
+        Boolean response;
+    }
 }

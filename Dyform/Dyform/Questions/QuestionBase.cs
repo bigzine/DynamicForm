@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Dyform
 {
     public abstract  class QuestionBase
-
-   {
+    {
         public string Title { get; set; }
         private QuestionBaseContainer _parent;
         public bool AllowEmptyAnswer;
@@ -57,5 +56,5 @@ namespace Dyform
         
       
 
-   }
+    }
 }

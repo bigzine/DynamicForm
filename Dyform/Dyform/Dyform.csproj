@@ -68,16 +68,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AnswerBase.cs" />
-    <Compile Include="BooleanQuestion.cs" />
-    <Compile Include="ChoicesQuestion.cs" />
-    <Compile Include="OpenAnswer.cs" />
-    <Compile Include="OpenQuestion.cs" />
-    <Compile Include="OrderQuestion.cs" />
-    <Compile Include="QuestionBase.cs" />
-    <Compile Include="CompositeQuestion.cs" />
-    <Compile Include="QuestionBaseContainer.cs" />
-    <Compile Include="QuestionRoot.cs" />
+    <Compile Include="Answers\AnswerBase.cs" />
+    <Compile Include="Answers\BooleanAnswer.cs" />
+    <Compile Include="Answers\OrderAnswer.cs" />
+    <Compile Include="Questions\BooleanQuestion.cs" />
+    <Compile Include="Questions\ChoicesQuestion.cs" />
+    <Compile Include="Answers\OpenAnswer.cs" />
+    <Compile Include="Questions\OpenQuestion.cs" />
+    <Compile Include="Questions\OrderQuestion.cs" />
+    <Compile Include="Questions\QuestionBase.cs" />
+    <Compile Include="Questions\CompositeQuestion.cs" />
+    <Compile Include="Questions\QuestionBaseContainer.cs" />
+    <Compile Include="Questions\QuestionRoot.cs" />
     <Compile Include="ViewModel\BooleanViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -93,7 +95,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Form.cs" />
-    <Compile Include="FormAnswer.cs" />
+    <Compile Include="Answers\FormAnswer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
